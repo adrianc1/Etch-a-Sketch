@@ -18,13 +18,13 @@ function createGrid(rowCol) {
 btn.addEventListener('click', () => {
     mainContainer.innerHTML = ""
     let boardSize = prompt('Enter Board Size:');
-    let colorChoice = prompt('Choose Color:')
     if (boardSize < 100) {
         createGrid(boardSize);
+        let randomColor = setBg()
         let square = document.querySelectorAll('.square')
         for (let i =0; i < square.length; i++){
            square[i].addEventListener('mouseover', () => {
-               square[i].style.background = colorChoice;
+               square[i].style.background = randomColor;
            })
        }
     } else if (boardSize => 100) {
@@ -33,7 +33,7 @@ btn.addEventListener('click', () => {
         let square = document.querySelectorAll('.square')
         for (let i =0; i < square.length; i++){
            square[i].addEventListener('mouseover', () => {
-               square[i].style.background = colorChoice;
+               square[i].style.background = 'red';
            })
        }
     }
@@ -41,5 +41,10 @@ btn.addEventListener('click', () => {
  })
 
 
-
-
+ const setBg = () => {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return "#" + randomColor
+    // document.body.style.backgroundColor = "#" + randomColor;
+    // color.innerHTML = "#" + randomColor;
+  }
+  
