@@ -20,9 +20,9 @@ btn.addEventListener('click', () => {
     let boardSize = prompt('Enter Board Size:');
     if (boardSize < 100) {
         createGrid(boardSize);
-        let randomColor = setBg()
         let square = document.querySelectorAll('.square')
         for (let i =0; i < square.length; i++){
+            let randomColor = setBg()
            square[i].addEventListener('mouseover', () => {
                square[i].style.background = randomColor;
            })
@@ -32,8 +32,9 @@ btn.addEventListener('click', () => {
         createGrid(boardSize);
         let square = document.querySelectorAll('.square')
         for (let i =0; i < square.length; i++){
+            let randomColor = setBg()
            square[i].addEventListener('mouseover', () => {
-               square[i].style.background = 'red';
+               square[i].style.background = randomColor;
            })
        }
     }
